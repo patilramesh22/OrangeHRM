@@ -10,7 +10,10 @@ class BaseTest:
     @pytest.fixture(autouse=True)
     def pre_post_condition(self):
         pfile=Properties()
-        pfile.load(open("../config.properties"))
+        try:
+            pfile.load(open("../config.properties"))
+        except:
+            pfile.load(open("config.properties"))
         browser=pfile['browser']
         url=pfile['url']
         ITO=pfile['ITO']
