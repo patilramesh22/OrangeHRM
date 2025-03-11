@@ -7,11 +7,11 @@ from pages.loginpage import LoginPage
 
 class TestLogin(BaseTest):
     def test_valid_login(self):
-        un=Excel.get_cell_value("../data/input.xlsx","ValidLogin",2,1)
-        pw=Excel.get_cell_value("../data/input.xlsx","ValidLogin",2,2)
+        # un=Excel.get_cell_value("../data/input.xlsx","ValidLogin",2,1)
+        # pw=Excel.get_cell_value("../data/input.xlsx","ValidLogin",2,2)
         lp = LoginPage(self.driver)
-        lp.set_username(un)
-        lp.set_password(pw)
+        lp.set_username("Admin")
+        lp.set_password("admin123")
         lp.click_on_login()
         hp = HomePage(self.driver)
         result = hp.verify_homepage_is_displayed(self.wait)
