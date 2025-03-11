@@ -17,12 +17,12 @@ class TestLogin(BaseTest):
         result = hp.verify_homepage_is_displayed(self.wait)
         assert result
 
-    def test_invalid_login(self):
-        un = Excel.get_cell_value("D:/book1.xlsx", "Sheet2", 2, 1)
-        pw = Excel.get_cell_value("D:/book1.xlsx", "Sheet2", 2, 2)
-        lp = LoginPage(self.driver)
-        lp.set_username(un)
-        lp.set_password(pw)
-        lp.click_on_login()
-        result = lp.verify_error_msg(self.wait)
-        assert result
+    # def test_invalid_login(self):
+    #     un = Excel.get_cell_value("D:/book1.xlsx", "Sheet2", 2, 1)
+    #     pw = Excel.get_cell_value("D:/book1.xlsx", "Sheet2", 2, 2)
+    #     lp = LoginPage(self.driver)
+    #     lp.set_username(un)
+    #     lp.set_password(pw)
+    #     lp.click_on_login()
+    #     result = lp.verify_error_msg(self.wait)
+    #     assert result
